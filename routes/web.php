@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/home", function () {
+    $data = [
+        'title' => 'Lista spesa',
+        'list' => [
+            'Pane',
+            'Pasta',
+            'Mozzarella',
+            'Vino',
+            'Pollo'
+        ]
+    ];
+
+    return view("home", $data);
+})->name("homePage");
